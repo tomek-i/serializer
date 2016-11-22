@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace TISerializer.Logic.Serializers
+namespace TI.Serializer.Logic.Serializers
 {
     public class XmlSerializer : Serializer
     {
