@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace TISerializer.Logic.Serializers
+namespace TI.Serializer.Logic.Serializers
 {
     
     public class JsonSerializer : Serializer

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TISerializer.Logic.API
+namespace TI.Serializer.Logic.API
 {
     
     public interface ISerializer

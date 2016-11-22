@@ -7,7 +7,7 @@
     <ProjectGuid>{702E433C-65F6-480F-AB56-85F523AD9E00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TISerializer.Logic</RootNamespace>
+    <RootNamespace>TI.Serializer.Logic</RootNamespace>
     <AssemblyName>TI.Serializer.Logic</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

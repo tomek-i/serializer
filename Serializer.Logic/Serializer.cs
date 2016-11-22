@@ -1,7 +1,7 @@
 ﻿using System;
-using TISerializer.Logic.API;
+using TI.Serializer.Logic.API;
 
-namespace TISerializer.Logic
+namespace TI.Serializer.Logic
 {
     public abstract class Serializer : ISerializer
     {
