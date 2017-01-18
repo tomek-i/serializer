@@ -1,7 +1,9 @@
 using System;
+
 using Moq;
 using NUnit.Framework;
-using TISerializer.Logic.Serializers;
+using TI.Serializer.Logic.Serializers;
+
 
 namespace TISerializer.UnitTests
 {
