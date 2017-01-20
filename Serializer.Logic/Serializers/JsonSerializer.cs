@@ -14,6 +14,12 @@ namespace TI.Serializer.Logic.Serializers
 
         public override T Deserialize<T>(string json)
         {
+            if (typeof (T).IsInterface || typeof (T).IsAbstract)
+            {
+                var obj = Deserialize(json);
+                return obj as T;
+            }
+
             return JsonConvert.DeserializeObject<T>(json);
         }
 
