@@ -9,9 +9,10 @@ namespace TISerializer.UnitTests
         public void UnitAtTest_Conditions_ExpectedBehaviour()
         {
             //ARRANGE
-            Assert.Inconclusive("todo");
+
             //ACT
             //ASSERT
+            Assert.Fail();
         }
     }
 }
