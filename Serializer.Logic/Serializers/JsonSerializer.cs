@@ -9,7 +9,6 @@ namespace TI.Serializer.Logic.Serializers
 
         public override string Serialize(object obj)
         {
-            
             return JsonConvert.SerializeObject(obj, Formatting.Indented);
         }
 
