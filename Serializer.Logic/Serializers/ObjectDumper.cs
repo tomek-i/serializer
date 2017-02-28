@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Text;
 
 namespace TI.Serializer.Logic.Serializers
 {
+    [ExcludeFromCodeCoverage]
     public class ObjectDumper:Serializer
     {
         StringBuilder _writer;
