@@ -3,19 +3,11 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: microsoft/dotnet:onbuild
+image: mono
 
 pipelines:
   default:
     - step:
-        caches:
-          - dotnetcore
-        script: # Modify the commands below to build your repository.
-          - export PROJECT_NAME=Serializer.Logic
-          - export TEST_NAME=Serializer.UnitTests
+        script:
           - nuget restore
-          - dotnet restore
           - MONO_IOMAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" Serializer.sln
-          # .NET CORE
-          #- dotnet build $PROJECT_NAME
-          #- dotnet test $TEST_NAME
