@@ -13,6 +13,9 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - export PROJECT_NAME=Serializer.Logic
           - export TEST_NAME=Serializer.UnitTests
+          - nuget restore
           - dotnet restore
-          - dotnet build $PROJECT_NAME
-          - dotnet test $TEST_NAME
+          - MONO_IOMAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" Serializer.sln
+          # .NET CORE
+          #- dotnet build $PROJECT_NAME
+          #- dotnet test $TEST_NAME
