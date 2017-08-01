@@ -11,4 +11,6 @@ pipelines:
         script:
           - nuget restore
           - MONO_IOMAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" Serializer.sln
+          # need to test download
           - curl -v -u $BB_ACCESS -X POST https://api.bitbucket.org/2.0/repositories/$BITBUCKET_REPO_OWNER/$BITBUCKET_REPO_SLUG/downloads/ -F files=@serializer.zip
+          
