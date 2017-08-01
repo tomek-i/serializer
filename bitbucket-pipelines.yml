@@ -14,7 +14,7 @@ pipelines:
           # need to test download
           # - curl -v -u $BB_USER:$BB_ACCESS -X POST https://api.bitbucket.org/2.0/repositories/$BITBUCKET_REPO_OWNER/$BITBUCKET_REPO_SLUG/downloads/ -F files=@serializer.zip
           - cd /opt/atlassian/pipelines/agent/build/Serializer.UnitTests/bin/Release/
-		  - mkdir dist
+          - mkdir dist
           - zip -j dist/$BITBUCKET_REPO_SLUG.zip *
           - cd dist
           - curl -v -u $BB_USER:$BB_ACCESS -X POST https://api.bitbucket.org/2.0/repositories/$BITBUCKET_REPO_OWNER/$BITBUCKET_REPO_SLUG/downloads/ -F files=@$BITBUCKET_REPO_SLUG.zip
