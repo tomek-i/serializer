@@ -9,12 +9,11 @@ pipelines:
   default:
     - step:
         script:
+          - apt-get update
+          - apt-get install -y zip
           - nuget restore
           - MONO_IOMAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" Serializer.sln
-          # need to test download
-          # - curl -v -u $BB_USER:$BB_ACCESS -X POST https://api.bitbucket.org/2.0/repositories/$BITBUCKET_REPO_OWNER/$BITBUCKET_REPO_SLUG/downloads/ -F files=@serializer.zip
           - cd /opt/atlassian/pipelines/agent/build/Serializer.UnitTests/bin/Release/
           - mkdir dist
-          - zip -j dist/$BITBUCKET_REPO_SLUG.zip *
-          - cd dist
-          - curl -v -u $BB_USER:$BB_ACCESS -X POST https://api.bitbucket.org/2.0/repositories/$BITBUCKET_REPO_OWNER/$BITBUCKET_REPO_SLUG/downloads/ -F files=@$BITBUCKET_REPO_SLUG.zip
+          - zip dist/${BITBUCKET_REPO_SLUG}.zip *
+          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"dist/${BITBUCKET_REPO_SLUG}.zip"
