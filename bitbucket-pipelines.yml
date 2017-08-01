@@ -16,4 +16,4 @@ pipelines:
           - cd /opt/atlassian/pipelines/agent/build/Serializer.Logic/bin/Release/
           - mkdir dist
           - zip dist/${BITBUCKET_REPO_SLUG}.zip TI.Serializer.Logic.dll TI.Serializer.Logic.pdb 
-          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"dist/${BITBUCKET_REPO_SLUG}.zip"
+          - curl -s --user "${BB_AUTH_STRING}" -X POST "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" -F files=@"dist/${BITBUCKET_REPO_SLUG}.zip"
