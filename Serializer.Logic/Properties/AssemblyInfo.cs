@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TI.Serializer")]
-[assembly: AssemblyCopyright("Copyright © Thomas Iwainski")]
+[assembly: AssemblyCopyright("Copyright © Thomas Iwainski 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
