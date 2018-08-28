@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TI.Serializer.Logic")]
+[assembly: AssemblyTitle("TI.Serializer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TI.Serializer.Logic")]
+[assembly: AssemblyProduct("TI.Serializer")]
 [assembly: AssemblyCopyright("Copyright © Thomas Iwainski 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
