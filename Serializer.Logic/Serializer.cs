@@ -7,6 +7,7 @@ namespace TI.Serializer.Logic
     {
         public abstract string Serialize(object anyObject);
         public abstract T Deserialize<T>(string serializedString) where T:class;
-        public abstract object Deserialize(string serializedString, Type type= null);
+        public abstract object Deserialize(string serializedString, Type type);
+        public abstract object Deserialize(string serializedString);
     }
 }

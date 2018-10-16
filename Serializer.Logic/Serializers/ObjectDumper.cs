@@ -7,20 +7,20 @@ using System.Text;
 namespace TI.Serializer.Logic.Serializers
 {
     [ExcludeFromCodeCoverage]
-    public class ObjectDumper:Serializer
+    public class ObjectDumper : Serializer
     {
         StringBuilder _writer;
         int _pos;
         int _level;
         int _depth;
-        
-       
+
+
         public override string Serialize(object obj)
         {
-           return Serialize(obj, 0);
+            return Serialize(obj, 0);
         }
 
-        public  string Serialize(object obj, int depth)
+        public string Serialize(object obj, int depth)
         {
             return Serialize(obj, depth, new StringBuilder());
         }
@@ -30,7 +30,7 @@ namespace TI.Serializer.Logic.Serializers
             _writer = log;
             _depth = depth;
             WriteObject(null, obj);
-            
+
             return log.ToString();
         }
 
@@ -42,9 +42,9 @@ namespace TI.Serializer.Logic.Serializers
         //    Console.WriteLine(stringBuilder);
         //}
 
-      
 
-      
+
+
 
         private void Write(string s)
         {
@@ -134,7 +134,7 @@ namespace TI.Serializer.Logic.Serializers
                             }
                             else
                             {
-                                Write(typeof (IEnumerable).IsAssignableFrom(t) ? "..." : "{ }");
+                                Write(typeof(IEnumerable).IsAssignableFrom(t) ? "..." : "{ }");
                             }
                         }
                     }
@@ -146,7 +146,7 @@ namespace TI.Serializer.Logic.Serializers
                         PropertyInfo p = m as PropertyInfo;
                         if (f == null && p == null) continue;
                         Type t = f?.FieldType ?? p.PropertyType;
-                        if (t.IsValueType || t == typeof (string)) continue;
+                        if (t.IsValueType || t == typeof(string)) continue;
                         object value = f != null ? f.GetValue(element) : p.GetValue(element, null);
                         if (value == null) continue;
                         _level++;
@@ -189,6 +189,11 @@ namespace TI.Serializer.Logic.Serializers
         }
 
         public override object Deserialize(string serializedString, Type type = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override object Deserialize(string serializedString)
         {
             throw new NotImplementedException();
         }

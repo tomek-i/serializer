@@ -14,6 +14,11 @@ namespace TI.Serializer.Logic.Serializers
             throw new NotImplementedException();
         }
 
+        public override object Deserialize(string serializedString)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string Serialize(object anyObject)
         {
             throw new NotImplementedException();
