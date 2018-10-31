@@ -23,7 +23,7 @@ namespace TI.Serializer.Logic.Serializers
         {
             if (typeof (T).IsInterface || typeof (T).IsAbstract)
             {
-                throw new ArgumentException("You cannot use an interace nor an abstract class as a type",nameof(T));
+                throw new ArgumentException("You cannot use an interface nor an abstract class as a type",nameof(T));
             }
 
             return JsonConvert.DeserializeObject<T>(json);
