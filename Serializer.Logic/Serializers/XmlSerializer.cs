@@ -3,6 +3,9 @@ using System.IO;
 
 namespace TI.Serializer.Logic.Serializers
 {
+    /// <summary>
+    /// XML Serializer
+    /// </summary>
     public class XmlSerializer : Serializer
     {
         #region Overrides of Serializer

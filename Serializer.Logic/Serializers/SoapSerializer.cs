@@ -2,6 +2,9 @@
 
 namespace TI.Serializer.Logic.Serializers
 {
+    /// <summary>
+    /// Soap Serlizer
+    /// </summary>
     public class SoapSerializer : Serializer
     {
         public override T Deserialize<T>(string serializedString)

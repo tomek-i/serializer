@@ -2,6 +2,9 @@
 
 namespace TI.Serializer.Logic.API
 {
+    /// <summary>
+    /// Serializer Interface
+    /// </summary>
     public interface ISerializer
     {
         string Serialize(object anyObject);

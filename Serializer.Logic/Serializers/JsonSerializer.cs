@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace TI.Serializer.Logic.Serializers
 {
+    /// <summary>
+    /// JSON Serializer (Wrapper around Newtonsoft)
+    /// </summary>
     public class JsonSerializer : Serializer
     {
         #region Overrides of Serializer

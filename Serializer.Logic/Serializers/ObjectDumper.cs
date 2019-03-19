@@ -6,6 +6,9 @@ using System.Text;
 
 namespace TI.Serializer.Logic.Serializers
 {
+    /// <summary>
+    /// Objevct Dumper
+    /// </summary>
     [ExcludeFromCodeCoverage]
     public class ObjectDumper : Serializer
     {

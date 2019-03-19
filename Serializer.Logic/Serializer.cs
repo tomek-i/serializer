@@ -3,6 +3,9 @@ using TI.Serializer.Logic.API;
 
 namespace TI.Serializer.Logic
 {
+    /// <summary>
+    /// Abstract serializer class
+    /// </summary>
     public abstract class Serializer : ISerializer
     {
         public abstract string Serialize(object anyObject);
