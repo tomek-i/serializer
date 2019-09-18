@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 
 namespace TI.Serializer.Logic.Serializers
 {
+
     /// <summary>
     /// JSON Serializer (Wrapper around Newtonsoft)
     /// </summary>
@@ -12,21 +13,17 @@ namespace TI.Serializer.Logic.Serializers
 
         public override string Serialize(object obj)
         {
-            return Serialize(obj, Format.Indented);
+            return Serialize(obj, Formatting.Indented);
         }
-        public  string Serialize(object obj, Format format)
+        public string Serialize(object obj, Formatting format = Formatting.Indented)
         {
-            Formatting form = Formatting.None;
-            if(format == Format.Indented)
-                form = Formatting.Indented;
-
-            return JsonConvert.SerializeObject(obj, form);
+            return JsonConvert.SerializeObject(obj, format);
         }
         public override T Deserialize<T>(string json)
         {
-            if (typeof (T).IsInterface || typeof (T).IsAbstract)
+            if (typeof(T).IsInterface || typeof(T).IsAbstract)
             {
-                throw new ArgumentException("You cannot use an interface nor an abstract class as a type",nameof(T));
+                throw new ArgumentException("You cannot use an interface nor an abstract class as a type", nameof(T));
             }
 
             return JsonConvert.DeserializeObject<T>(json);
