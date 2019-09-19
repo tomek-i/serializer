@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\ISerializer.cs" />
-    <Compile Include="Serializers\Format.cs" />
+    <Compile Include="Serializers\Base64Coder.cs" />
+    <Compile Include="API\Format.cs" />
     <Compile Include="Serializers\JsonSerializer.cs" />
     <Compile Include="Serializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
