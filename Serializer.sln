@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializer.Logic", "Serializer.Logic\Serializer.Logic.csproj", "{702E433C-65F6-480F-AB56-85F523AD9E00}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializer.UnitTests", "Serializer.UnitTests\Serializer.UnitTests.csproj", "{E7939466-5520-4069-B341-457399767A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{087C73B4-2392-4F05-90B8-782389E8004A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{E7939466-5520-4069-B341-457399767A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7939466-5520-4069-B341-457399767A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7939466-5520-4069-B341-457399767A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{087C73B4-2392-4F05-90B8-782389E8004A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{087C73B4-2392-4F05-90B8-782389E8004A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{087C73B4-2392-4F05-90B8-782389E8004A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{087C73B4-2392-4F05-90B8-782389E8004A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4931EBE-BC9E-4BBC-B195-2DFC162B59E4}
 	EndGlobalSection
 EndGlobal
