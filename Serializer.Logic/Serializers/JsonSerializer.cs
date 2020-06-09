@@ -1,5 +1,5 @@
-using System;
 using Newtonsoft.Json;
+using System;
 
 namespace TI.Serializer.Logic.Serializers
 {
@@ -17,7 +17,18 @@ namespace TI.Serializer.Logic.Serializers
         }
         public string Serialize(object obj, Formatting format = Formatting.Indented)
         {
-            return JsonConvert.SerializeObject(obj, format);
+            return Serialize(obj, format, null);
+        }
+        public string Serialize(object obj, Formatting format, JsonSerializerSettings settings = null)
+        {
+            if (settings == null)
+            {
+                return JsonConvert.SerializeObject(obj, format);
+            }
+            else
+            {
+                return JsonConvert.SerializeObject(obj, format, settings);
+            }
         }
         public override T Deserialize<T>(string json)
         {
