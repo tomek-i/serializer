@@ -5,7 +5,7 @@ namespace TI.Serializer.Logic.Serializers
     /// <summary>
     /// Soap Serlizer
     /// </summary>
-    [Obsolete("Not Implemented yet",true)]
+    [Obsolete("Not Implemented yet", true)]
     public class SoapSerializer : Serializer
     {
         public override T Deserialize<T>(string serializedString)

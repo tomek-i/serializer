@@ -12,10 +12,10 @@ namespace TI.Serializer.Logic.Serializers
     [ExcludeFromCodeCoverage]
     public class ObjectDumper : Serializer
     {
-        StringBuilder _writer;
-        int _pos;
-        int _level;
-        int _depth;
+        private StringBuilder _writer;
+        private int _pos;
+        private int _level;
+        private int _depth;
 
 
         public override string Serialize(object obj)
@@ -37,18 +37,7 @@ namespace TI.Serializer.Logic.Serializers
             return log.ToString();
         }
 
-        //private static void WriteYAML(object o)
-        //{
-        //    var stringBuilder = new StringBuilder();
-        //    var serializer = new Serializer();
-        //    serializer.Serialize(new IndentedTextWriter(new StringWriter(stringBuilder)), o);
-        //    Console.WriteLine(stringBuilder);
-        //}
-
-
-
-
-
+     
         private void Write(string s)
         {
             if (s != null)
@@ -60,7 +49,10 @@ namespace TI.Serializer.Logic.Serializers
 
         private void WriteIndent()
         {
-            for (int i = 0; i < _level; i++) _writer.Append("  ");
+            for (int i = 0; i < _level; i++)
+            {
+                _writer.Append("  ");
+            }
         }
 
         private void WriteLine()
@@ -72,7 +64,10 @@ namespace TI.Serializer.Logic.Serializers
         private void WriteTab()
         {
             Write("  ");
-            while (_pos % 8 != 0) Write(" ");
+            while (_pos % 8 != 0)
+            {
+                Write(" ");
+            }
         }
 
         private void WriteObject(string prefix, object element)
@@ -86,8 +81,7 @@ namespace TI.Serializer.Logic.Serializers
             }
             else
             {
-                IEnumerable enumerableElement = element as IEnumerable;
-                if (enumerableElement != null)
+                if (element is IEnumerable enumerableElement)
                 {
                     foreach (object item in enumerableElement)
                     {
@@ -97,7 +91,11 @@ namespace TI.Serializer.Logic.Serializers
                             Write(prefix);
                             Write("...");
                             WriteLine();
-                            if (_level >= _depth) continue;
+                            if (_level >= _depth)
+                            {
+                                continue;
+                            }
+
                             _level++;
                             WriteObject(prefix, item);
                             _level--;
@@ -141,17 +139,37 @@ namespace TI.Serializer.Logic.Serializers
                             }
                         }
                     }
-                    if (propWritten) WriteLine();
-                    if (_level >= _depth) return;
+                    if (propWritten)
+                    {
+                        WriteLine();
+                    }
+
+                    if (_level >= _depth)
+                    {
+                        return;
+                    }
+
                     foreach (MemberInfo m in members)
                     {
                         FieldInfo f = m as FieldInfo;
                         PropertyInfo p = m as PropertyInfo;
-                        if (f == null && p == null) continue;
+                        if (f == null && p == null)
+                        {
+                            continue;
+                        }
+
                         Type t = f?.FieldType ?? p.PropertyType;
-                        if (t.IsValueType || t == typeof(string)) continue;
+                        if (t.IsValueType || t == typeof(string))
+                        {
+                            continue;
+                        }
+
                         object value = f != null ? f.GetValue(element) : p.GetValue(element, null);
-                        if (value == null) continue;
+                        if (value == null)
+                        {
+                            continue;
+                        }
+
                         _level++;
                         WriteObject(m.Name + ": ", value);
                         _level--;
@@ -166,9 +184,9 @@ namespace TI.Serializer.Logic.Serializers
             {
                 Write("null");
             }
-            else if (o is DateTime)
+            else if (o is DateTime time)
             {
-                Write(((DateTime)o).ToShortDateString());
+                Write(time.ToShortDateString());
             }
             else if (o is ValueType || o is string)
             {
